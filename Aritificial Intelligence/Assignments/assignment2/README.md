@@ -1,10 +1,10 @@
-<h1>[Assignment2 : Hill Climbing]</h1>
-<h4>융합전자공학부 2015001103 조윤상</h4><br /><br />
+# [Assignment2 : Hill Climbing]
+#### 융합전자공학부 2015001103 조윤상
 
-<h3>1. 목표</h3>
+### 1. 목표
 Local Search 에 해당하는 Hill Climbing 기법으로 N-Queens 문제를 해결한다.<br /><br />
 
-<h3>2. 알고리즘 구성</h3>
+### 2. 알고리즘 구성
 본 과제에서는 다음과 같은 방식으로 Hill Climbing을 구현하였다.<br />
 1. NXN 체스판에 대하여 각 열의 임의의 위치에 Queen을 하나씩 배치한다.<br />
 2. 해당 배치에 대한 heuristc 값을 계산한다.<br />    
@@ -20,8 +20,8 @@ Local Search 에 해당하는 Hill Climbing 기법으로 N-Queens 문제를 해�
 9. 반환받은 결과값을 resultN.txt 에 출력한다.  <br />
 
 세부 메소드는 다음과 같다.  
-<h5><span>&#10112;</span>  generate :  퀸의 초기 배치를 랜덤한 위치로 생성 </h5> 
- 1) 어레이리스트 및 랜덤변수를 생성한다.<br />
+##### <span>&#10112;</span>  generate :  퀸의 초기 배치를 랜덤한 위치로 생성 
+1) 어레이리스트 및 랜덤변수를 생성한다.<br />
 ```
 ArrayList<Integer> list = new ArrayList<Integer>();  
 Random r = new Random();
@@ -29,7 +29,7 @@ Random r = new Random();
 <br />
  2) 각 열의 랜덤한 위치에 퀸을 1개씩 배치한다.<br />
 ```
-for (int i=0 ; i<N; i++) {		
+for (int i=0; i<N; i++) {		
 	list.add(r.nextInt(N));		
 }
 ```
