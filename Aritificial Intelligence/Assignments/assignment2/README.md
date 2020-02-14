@@ -193,7 +193,6 @@ i. 랜덤으로 초기 배치 생성 <br />
 이때 최선의 결과는 휴리스틱이 3인 [3 0 2 1 0] 인 경우로, 이를 저장하고 다음 칼럼으로 넘어간다.<br /><br /><br />
 4) 마지막 Column까지 휴리스틱 탐색 과정을 수행한다.<br />
 <img src="./image/column_3.PNG" width="800" height="200>
-<img src="./image/column_4.PNG" width="800" height="200">
 <img src="./image/column_5.PNG" width="800" height="200"><br /><br />
 5) 마지막 Column까지 탐색 작업을 수행한 결과물은 휴리스틱이 1인 [3 0 4 1 1]이다.<br />
    이는 탐색 수행 전 [4 1 2 1 0]의 휴리스틱 8보다 작으므로, 다시 첫번째 Column부터 탐색을 수행한다.<br />
