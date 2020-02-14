@@ -74,7 +74,7 @@ if(container.size() < N) {
  ```  
 5) 큐에 저장된 원소가 없을 때까지 3), 4)의 과정을 반복한다.  
 * 참고: BFS 알고리즘의 동작 방식  
-<img src="/uploads/a395919bb72e9b2c91366b23a94cb0e6/BFS.PNG"  width="900" height="500")>  
+<img src="./image/BFS.PNG"  width="900" height="500")>  
 
 
 #### 2-4. DFS 알고리즘(DFS 메소드)
@@ -115,7 +115,7 @@ if(container.size() < N) {
 ```    
 5) 큐에 저장된 원소가 없을 때까지 3), 4)의 과정을 반복한다.    
 * 참고: DFS 알고리즘의 동작 방식  
-<img src = "/uploads/998b58d55a7477fb3b03908d2e7d692e/DFS.PNG"  width="900" height="500">    
+<img src = "./image/DFS.PNG"  width="900" height="500">    
 
 
 
@@ -205,32 +205,32 @@ FileWriter fw = null;
 
 ## 3. 실행 결과    
 ##### n = 1 일 때  
-![practice_n_1](/uploads/490fe644555f01938646e68a2e775a88/practice_n_1.PNG)    
-![result_n_1](/uploads/0f23198d687744878daddf83b2f2ee69/result_n_1.PNG)    
+![practice_n_1](./image/practice_n_1.PNG)    
+![result_n_1](./image/result_n_1.PNG)    
 
 ##### n = 2 일 때  
-![practice_n_2](/uploads/973e8416e31b70e03bd174bfb64937df/practice_n_2.PNG)  
-![result_n_2](/uploads/67400f9f7e052414a4413d87544fe55b/result_n_2.PNG)  
+![practice_n_2](./image/practice_n_2.PNG)  
+![result_n_2](./image/result_n_2.PNG)  
 
 ##### n = 3 일 때   
-![practice_n_3](/uploads/a29ef0e9ca8813415948c444809d2aad/practice_n_3.png)   
-![result_n_3](/uploads/ecd292b9180006cc7e21d5a30dc65886/result_n_3.PNG)   
+![practice_n_3](./image/practice_n_3.png)   
+![result_n_3](./image/result_n_3.PNG)   
 
 ##### n = 4 일 때   
-![practice_n_4](/uploads/277c730caf991a3406dc4e4b1c250647/practice_n_4.PNG)   
-![result_n_4](/uploads/2faf6b9ad698ec81d93ea5d6b4cdf7c0/result_n_4.PNG)    
+![practice_n_4](./image/practice_n_4.PNG)   
+![result_n_4](./image/result_n_4.PNG)    
 
 ##### n = 5 일 때   
-![practice_n_5](/uploads/85887753580307176adc5863541a27ec/practice_n_5.PNG)   
-![result_n_5](/uploads/e68439421312812d8b3000a802955ae1/result_n_5.PNG)     
+![practice_n_5](./image/practice_n_5.PNG)   
+![result_n_5](./image/result_n_5.PNG)     
 
 ##### n = 6 일 때   
-![practice_n_6](/uploads/2f422c8a8505692aa496284443f88325/practice_n_6.PNG)   
-![result_n_6](/uploads/1d77e01b842f5ae6387a6bfd6824feea/result_n_6.PNG)   
+![practice_n_6](./image/practice_n_6.PNG)   
+![result_n_6](./image/result_n_6.PNG)   
 
 ##### n = 7 일 때   
-![practice_n_7](/uploads/466354e3796653abb6b23f1ad59be3ae/practice_n_7.PNG)   
-![result_n_7](/uploads/f3c74f94ea978ee565064a8839b311fc/result_n_7.PNG)    
+![practice_n_7](./image/practice_n_7.PNG)   
+![result_n_7](./image/result_n_7.PNG)    
 
 
 
