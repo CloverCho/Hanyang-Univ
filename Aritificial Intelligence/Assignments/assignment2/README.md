@@ -21,35 +21,31 @@ Local Search 에 해당하는 Hill Climbing 기법으로 N-Queens 문제를 해�
 
 세부 메소드는 다음과 같다.  
 ##### <span>&#10112;</span>  generate :  퀸의 초기 배치를 랜덤한 위치로 생성 
-1) 어레이리스트 및 랜덤변수를 생성한다.<br />
+i. 어레이리스트 및 랜덤변수를 생성한다.<br />
 ```
 ArrayList<Integer> list = new ArrayList<Integer>();  
 Random r = new Random();
 ```
-<br />
- 2) 각 열의 랜덤한 위치에 퀸을 1개씩 배치한다.<br />
+ii. 각 열의 랜덤한 위치에 퀸을 1개씩 배치한다.<br />
 ```
 for (int i=0; i<N; i++) {		
 	list.add(r.nextInt(N));		
 }
 ```
-<br />
-3) 해당 배치를 반환한다.<br />
+iii. 해당 배치를 반환한다.<br />
 ```
-return list
+return list;
 ```
 <br /><br />
 
-<h5><span>&#10113;</span>  Heuristic :  입력받은 배치에 대한 휴리스틱 값 반환 </h5> 
-1) 1X1사이즈의 체스판일 경우, 휴리스틱이 0이므로 이를 반환한다.<br />
+##### <span>&#10113;</span>  Heuristic :  입력받은 배치에 대한 휴리스틱 값 반환 
+i. 1X1사이즈의 체스판일 경우, 휴리스틱이 0이므로 이를 반환한다.<br />
 ```
 int i, j;
 int heuristic = 0;		
 if (list.size() == 1) return heuristic;
 ```
-<br />
-
-2) 같은 row값을 가지거나(좌우로 만남), 위치의 차가 인덱스의 차이와 같은(대각선으로 만남) 퀸의 쌍을 발견하면 휴리스틱을 1증가시킨다.<br />
+ii. 같은 row값을 가지거나(좌우로 만남), 위치의 차가 인덱스의 차이와 같은(대각선으로 만남) 퀸의 쌍을 발견하면 휴리스틱을 1증가시킨다.<br />
 ```
 for (i = 1; i < list.size() ; i++) {						
 	for (j = 0; j < i ; j++){		
@@ -60,50 +56,43 @@ for (i = 1; i < list.size() ; i++) {
 		}
 }
 ```
-<br />
-3) 탐색이 끝나면 휴리스틱을 반환한다.<br />
+iii. 탐색이 끝나면 휴리스틱을 반환한다.<br />
 ```
 return heuristic;
 ```
 <br /><br />
 
-<h5><span>&#10114;</span>  HillClimbing :  NXN 체스판에 대한 HillClimbing 작업 수행</h5> 
-1) 시작 시각 측정<br />
+##### <span>&#10114;</span>  HillClimbing :  NXN 체스판에 대한 HillClimbing 작업 수행
+i. 시작 시각 측정<br />
 ```
 long startTime = System.nanoTime();
 ```
-<br />
-2) N이 1보다 작거나, 2 또는 3이면 n-queens problem의 해가 존재하지 않는다.<br />
+ii. N이 1보다 작거나, 2 또는 3이면 n-queens problem의 해가 존재하지 않는다.<br />
 ```
 if(N < 1 || N == 2 || N == 3) {				// N이 음수이거나 2또는 3인 경우 해는 존재하지 않는다.
 	str += "No Solution\n\n";
 	return str;
 }
 ```
-<br />
-3) 탐색 작업에 사용할 어레이리스트 tmp와 최선의 상태를 저장할 어레이스트 best를 선언한다.<br />
+iii. 탐색 작업에 사용할 어레이리스트 tmp와 최선의 상태를 저장할 어레이스트 best를 선언한다.<br />
 ```
 ArrayList<Integer> best = new ArrayList<Integer>();	// 최선의 퀸 배치
 ArrayList<Integer> tmp = new ArrayList<Integer>();	// 탐색할 퀸 배치
 ```
-<br />
-
-4) generate 메소드를 이용하여 퀸의 초기 배치를 랜덤한 위치로 생성하고, 그에 따른 초기 휴리스틱 값을 저장한다.<br />
+iv. generate 메소드를 이용하여 퀸의 초기 배치를 랜덤한 위치로 생성하고, 그에 따른 초기 휴리스틱 값을 저장한다.<br />
 ```
 tmp = generate(N);
 best = (ArrayList<Integer>)tmp.clone();		
 int heuristic = Heuristic(tmp);				// 초기 휴리스틱 값
 int tmpheuristic = Heuristic(tmp);
 ```
-<br />
-5) Restart 횟수 변수 및 local optimum 체크 변수를 생성한다.<br />
+v. Restart 횟수 변수 및 local optimum 체크 변수를 생성한다.<br />
 ```
 int countRestart = 0;
 int heuristic_before;					// Local optimal 에 빠졌는지 체크하는 인자
 ```
-<br />
 다음의 과정은 while 반복문 내에서 실행된다.<br />
-6) 탐색 시작 전, 현재의 휴리스틱 값을 저장하고, 이 값이 0에 해당하는지 확인한다.<br />
+vi. 탐색 시작 전, 현재의 휴리스틱 값을 저장하고, 이 값이 0에 해당하는지 확인한다.<br />
 ```
 heuristic_before = heuristic;		// Hill Climb 시작 전, 현재의 휴리스틱을 저장한다.
 
@@ -118,8 +107,7 @@ if(heuristic == 0) {			// 생성된 queen의 초기 위치가 처음부터 조�
 	return str;						// 문자열 반환
 }
 ```
-<br />
-7)  퀸의 위치를 조정하며 휴리스틱 값을 계산하고, 기존 휴리스틱 값보다 작은 값이 나오면 해당 배치 및 휴리스틱 값을 업데이트한다.<br />
+vii.  퀸의 위치를 조정하며 휴리스틱 값을 계산하고, 기존 휴리스틱 값보다 작은 값이 나오면 해당 배치 및 휴리스틱 값을 업데이트한다.<br />
      첫번째 column에 대하여 이 작업이 완료되면, 두번째 column의 퀸의 위치를 조정하며, 이후 n번째 column까지 이 작업을 반복한다.<br />
      휴리스틱 값이 0인 경우를 발견하면 탐색을 종료하고 해당 배치 및 소요시간, 재시작 횟수를 문자열에 저장하여 반환한다.<br />
 ```
@@ -144,8 +132,7 @@ for(int i = 0; i<N; i++) {						// 모든 열에 대하여 다음을 반복한�
 	}
 }
 ```
-<br />
-8) 모든 column에 대하여 위의 작업을 수행하였음에도 휴리스틱 값이 변하지 않은 경우, local optimum에 해당한다고 간주하고,<br />
+viii. 모든 column에 대하여 위의 작업을 수행하였음에도 휴리스틱 값이 변하지 않은 경우, local optimum에 해당한다고 간주하고,<br />
     새롭게 체스판 배치를 생성하여 Restart한다.<br />
 ```
 if(heuristic_before == heuristic) {		 // 체스판의 모든 열에 대하여 Hill Climbing 작업을 수행하여도 휴리스틱 값이 변하지 않은 경우
@@ -160,22 +147,20 @@ if(heuristic_before == heuristic) {		 // 체스판의 모든 열에 대하여 Hi
 
 
 
-<h5><span>&#10114;</span>  main :  메인 실행 함수 </h5> 
-1) argument로서 첫번째 인자로 N을, 두번째 인자로 resultN.txt파일의 경로를 입력받는다.<br />
+##### <span>&#10114;</span>  main :  메인 실행 함수 
+i. argument로서 첫번째 인자로 N을, 두번째 인자로 resultN.txt파일의 경로를 입력받는다.<br />
 ```
 int N = Integer.parseInt(args[0]);					// 첫번째 인자(차수)
 String Address = args[1].replace("\\", "\\\\");		// 두번째 인자(파일주소)
 String Filename = "result"+N+".txt";
 String File = Address + "\\\\" + Filename;
 ```
-<br />
-2) 입력받은 차수 N에 대하여 Hill Climbing 방식으로 n-queens 문제를 풀어 그 결과를 얻는다.<br />
+ii. 입력받은 차수 N에 대하여 Hill Climbing 방식으로 n-queens 문제를 풀어 그 결과를 얻는다.<br />
 ```
 String result = "";
 result = HillClimbing(N);					// HillClimbing 탐색 수행
 ```
-<br />
-3) 해당 결과를 resultN.txt 이라는 파일명으로 입력받은 경로에 작성한다.<br />
+iii. 해당 결과를 resultN.txt 이라는 파일명으로 입력받은 경로에 작성한다.<br />
 ```
 FileWriter fw = null;
 
@@ -196,7 +181,7 @@ try {
 ```
 <br /><br />
 <span>&#8251;</span> 본 프로그램의 실행 과정을 도식화하면 다음과 같다.(N=5라 가정)<br /><br />
-1) 랜덤으로 초기 배치 생성 <br />
+i. 랜덤으로 초기 배치 생성 <br />
    이때 초기 배치가 [4 1 2 1 0]으로 형성되었다고 가정한다.
 <img src="/uploads/d9ac4917d14b34e43d224bbeab1979c6/start.PNG" width="200" height="320">
 <br />
