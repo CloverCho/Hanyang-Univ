@@ -21,11 +21,11 @@ Local Search 에 해당하는 Hill Climbing 기법으로 N-Queens 문제를 해�
 
 세부 메소드는 다음과 같다.  
 <h5><span>&#10112;</span>  generate :  퀸의 초기 배치를 랜덤한 위치로 생성 </h5> 
- 1) 어레이리스트 및 랜덤변수를 생성한다. <br />
-~~~
+ 1) 어레이리스트 및 랜덤변수를 생성한다.<br />
+```
 ArrayList<Integer> list = new ArrayList<Integer>();  
 Random r = new Random();
-~~~
+```
 <br />
  2) 각 열의 랜덤한 위치에 퀸을 1개씩 배치한다.<br />
 ```
