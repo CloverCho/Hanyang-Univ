@@ -74,7 +74,7 @@ if(container.size() < N) {
  ```  
 5) 큐에 저장된 원소가 없을 때까지 3), 4)의 과정을 반복한다.  
 * 참고: BFS 알고리즘의 동작 방식  
-<img src="./image/BFS.PNG"  width="900" height="500")>  
+<img src = "./image/BFS.PNG"  width="900" height="500">  
 
 
 #### 2-4. DFS 알고리즘(DFS 메소드)
@@ -159,9 +159,9 @@ if(container.size() < limit) {
 5) 큐에 저장된 원소가 없을 때까지 3), 4)의 과정을 반복한다.    
 * 참고: DFID 알고리즘의 동작 방식  
     * limit = 1인 경우    
-      <img src="/uploads/0fc2c576d075dff34edf668edd808375/DFID_limit_1.PNG"  width = "900"  height="500">    
+      <img src="./image/DFID_limit_1.PNG"  width = "900"  height="500">    
     * limit = 2인 경우  
-       <img src = "/uploads/833c13adb906d7549d4cbf4dab11e58b/DFID_limit_2.PNG" width = *800"  height = "350" >  
+      <img src = "./image/DFID_limit_2.PNG" width = "800"  height = "350" >  
 
 
 #### 2-6. Main 메소드   
