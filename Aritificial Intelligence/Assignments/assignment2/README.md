@@ -1,4 +1,4 @@
-<h1>[Assignment2 : Hill Climbing]</h1>
+#[Assignment2 : Hill Climbing]
 <h4>융합전자공학부 2015001103 조윤상</h4><br /><br />
 
 <h3>1. 목표</h3>
@@ -28,29 +28,29 @@ Random r = new Random();
 ```
 <br />
  2) 각 열의 랜덤한 위치에 퀸을 1개씩 배치한다.<br />
-<pre>
-for (int i=0; i<N; i++) {		
+```
+for (int i=0 ; i<N; i++) {		
 	list.add(r.nextInt(N));		
 }
-</pre>
+```
 <br />
 3) 해당 배치를 반환한다.<br />
-<pre>
+```
 return list
-</pre>
+```
 <br /><br />
 
 <h5><span>&#10113;</span>  Heuristic :  입력받은 배치에 대한 휴리스틱 값 반환 </h5> 
 1) 1X1사이즈의 체스판일 경우, 휴리스틱이 0이므로 이를 반환한다.<br />
-<pre>
+```
 int i, j;
 int heuristic = 0;		
 if (list.size() == 1) return heuristic;
-</pre>
+```
 <br />
 
 2) 같은 row값을 가지거나(좌우로 만남), 위치의 차가 인덱스의 차이와 같은(대각선으로 만남) 퀸의 쌍을 발견하면 휴리스틱을 1증가시킨다.<br />
-<pre>
+```
 for (i = 1; i < list.size() ; i++) {						
 	for (j = 0; j < i ; j++){		
 		if (list.get(j) == list.get(i))				// 같은 row 값을 가지는 퀸이 있으면
@@ -59,52 +59,52 @@ for (i = 1; i < list.size() ; i++) {
 			heuristic++;							// heuristic을 1 증가시킨다.
 		}
 }
-</pre>
+```
 <br />
 3) 탐색이 끝나면 휴리스틱을 반환한다.<br />
-<pre>
+```
 return heuristic;
-</pre>
+```
 <br /><br />
 
 <h5><span>&#10114;</span>  HillClimbing :  NXN 체스판에 대한 HillClimbing 작업 수행</h5> 
 1) 시작 시각 측정<br />
-<pre>
+```
 long startTime = System.nanoTime();
-</pre>
+```
 <br />
 2) N이 1보다 작거나, 2 또는 3이면 n-queens problem의 해가 존재하지 않는다.<br />
-<pre>
+```
 if(N < 1 || N == 2 || N == 3) {				// N이 음수이거나 2또는 3인 경우 해는 존재하지 않는다.
 	str += "No Solution\n\n";
 	return str;
 }
-</pre>
+```
 <br />
 3) 탐색 작업에 사용할 어레이리스트 tmp와 최선의 상태를 저장할 어레이스트 best를 선언한다.<br />
-<pre>
+```
 ArrayList<Integer> best = new ArrayList<Integer>();	// 최선의 퀸 배치
 ArrayList<Integer> tmp = new ArrayList<Integer>();	// 탐색할 퀸 배치
-</pre>
+```
 <br />
 
 4) generate 메소드를 이용하여 퀸의 초기 배치를 랜덤한 위치로 생성하고, 그에 따른 초기 휴리스틱 값을 저장한다.<br />
-<pre>
+```
 tmp = generate(N);
 best = (ArrayList<Integer>)tmp.clone();		
 int heuristic = Heuristic(tmp);				// 초기 휴리스틱 값
 int tmpheuristic = Heuristic(tmp);
-</pre>
+```
 <br />
 5) Restart 횟수 변수 및 local optimum 체크 변수를 생성한다.<br />
-<pre>
+```
 int countRestart = 0;
 int heuristic_before;					// Local optimal 에 빠졌는지 체크하는 인자
-</pre>
+```
 <br />
 다음의 과정은 while 반복문 내에서 실행된다.<br />
 6) 탐색 시작 전, 현재의 휴리스틱 값을 저장하고, 이 값이 0에 해당하는지 확인한다.<br />
-<pre>
+```
 heuristic_before = heuristic;		// Hill Climb 시작 전, 현재의 휴리스틱을 저장한다.
 
 if(heuristic == 0) {			// 생성된 queen의 초기 위치가 처음부터 조건을 만족할 경우
@@ -117,12 +117,12 @@ if(heuristic == 0) {			// 생성된 queen의 초기 위치가 처음부터 조�
 	str = str + "\nNumber of Restart : " + countRestart + "\n\n";			// Restart 횟수
 	return str;						// 문자열 반환
 }
-</pre>
+```
 <br />
 7)  퀸의 위치를 조정하며 휴리스틱 값을 계산하고, 기존 휴리스틱 값보다 작은 값이 나오면 해당 배치 및 휴리스틱 값을 업데이트한다.<br />
      첫번째 column에 대하여 이 작업이 완료되면, 두번째 column의 퀸의 위치를 조정하며, 이후 n번째 column까지 이 작업을 반복한다.<br />
      휴리스틱 값이 0인 경우를 발견하면 탐색을 종료하고 해당 배치 및 소요시간, 재시작 횟수를 문자열에 저장하여 반환한다.<br />
-<pre>
+```
 for(int i = 0; i<N; i++) {						// 모든 열에 대하여 다음을 반복한다.
 	for(int j = 0; j<N; j++) {
 		tmp.set(i,j);							// tmp의 i번째 원소를 1에서 N까지 바꾸어 본다.
@@ -143,11 +143,11 @@ for(int i = 0; i<N; i++) {						// 모든 열에 대하여 다음을 반복한�
 		}
 	}
 }
-</pre>
+```
 <br />
 8) 모든 column에 대하여 위의 작업을 수행하였음에도 휴리스틱 값이 변하지 않은 경우, local optimum에 해당한다고 간주하고,<br />
     새롭게 체스판 배치를 생성하여 Restart한다.<br />
-<pre>
+```
 if(heuristic_before == heuristic) {		 // 체스판의 모든 열에 대하여 Hill Climbing 작업을 수행하여도 휴리스틱 값이 변하지 않은 경우
 								           // Local optimum에 빠졌다고 보고, Restart 한다.
 		countRestart++;						// Restart 횟수 증가
@@ -155,7 +155,7 @@ if(heuristic_before == heuristic) {		 // 체스판의 모든 열에 대하여 Hi
 		heuristic = Heuristic(tmp);			// 새로운 체스판에 대한 휴리스틱
 		tmpheuristic = heuristic;		
 }
-</pre>
+```
 <br />
 
 
