@@ -32,7 +32,7 @@
  * 참고: 대각선 방향으로 만나는 퀸들의 관계  
 
 
-<img src = "/uploads/fabe91dc7b5393a44d38a66d9822d6b2/CheckSafe.PNG"  width="500" height="400">   
+<img src = "./image/CheckSafe.PNG"  width="500" height="400">   
  -> 대각선으로 만나는 퀸들의 값의 차이는 각각의 인덱스의 차이와 같다.  
  
 
