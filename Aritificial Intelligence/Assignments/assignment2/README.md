@@ -183,68 +183,68 @@ try {
 <span>&#8251;</span> 본 프로그램의 실행 과정을 도식화하면 다음과 같다.(N=5라 가정)<br /><br />
 i. 랜덤으로 초기 배치 생성 <br />
    이때 초기 배치가 [4 1 2 1 0]으로 형성되었다고 가정한다.
-<img src="/uploads/d9ac4917d14b34e43d224bbeab1979c6/start.PNG" width="200" height="320">
+<img src="./image/start.PNG" width="200" height="320">
 <br />
 2) 첫번째 Column값을 변화시키면서 휴리스틱 값이 가장 작은 경우를 찾는다.<br />
-<img src="/uploads/a13889405d50f9e994b369c9216dd379/column_1.PNG" width="800" height="200">
+<img src="./image/column_1.PNG" width="800" height="200">
 이때 최선의 결과는 휴리스틱이 5인 [3 1 2 1 0] 인 경우로, 이를 저장하고 다음 칼럼으로 넘어간다.<br /><br /><br />
 3) 두번째 Column값을 변화시키면서 휴리스틱 값이 가장 작은 경우를 찾는다.<br />
-<img src="/uploads/b09446c8fd5a6434e40afcad1f44e5d0/column_2.PNG" width="800" height="200">
+<img src="./image/column_2.PNG" width="800" height="200">
 이때 최선의 결과는 휴리스틱이 3인 [3 0 2 1 0] 인 경우로, 이를 저장하고 다음 칼럼으로 넘어간다.<br /><br /><br />
 4) 마지막 Column까지 휴리스틱 탐색 과정을 수행한다.<br />
-<img src="/uploads/e69d1f47266171224fe03230bc24ceeb/column_3.PNG" width="800" height="200>
-<img src="/uploads/f7425be0be377e3a1a13993666390881/column_4.PNG" width="800" height="200">
-<img src="/uploads/1bd0e586f0a6750055b71208820c01c3/column_5.PNG" width="800" height="200"><br /><br />
+<img src="./image/column_3.PNG" width="800" height="200>
+<img src="./image/column_4.PNG" width="800" height="200">
+<img src="./image/column_5.PNG" width="800" height="200"><br /><br />
 5) 마지막 Column까지 탐색 작업을 수행한 결과물은 휴리스틱이 1인 [3 0 4 1 1]이다.<br />
    이는 탐색 수행 전 [4 1 2 1 0]의 휴리스틱 8보다 작으므로, 다시 첫번째 Column부터 탐색을 수행한다.<br />
-<img src="/uploads/bcf05cdb09d63b86feb03531ae70cddb/end_1.PNG" width="800" height="280"><br /><br />
+<img src="./image/end_1.PNG" width="800" height="280"><br /><br />
 6) [3 0 4 1 1]의 모든 column에 대해 local search를 하여도 여전히 결과물은 [3 0 4 1 1] 로, 휴리스틱이 바뀌지 않게 된다.<br />
   따라서 더 이상의 탐색을 중단하고, 새로운 배치를 생성해 Restart한다.([2 3 0 4 2]가 생성되었다고 가정)<br />
-<img src="/uploads/2641d50f8c66c19852065f6fb079645e/end_2.PNG" width="800" height="280"><br /><br />
+<img src="./image/end_2.PNG" width="800" height="280"><br /><br />
 7) 휴리스틱 값이 0이 될 때까지 2)~6) 과정을 반복한다.<br />
-<img src="/uploads/fa9ab114d7d12a9e105fe5b36df3b044/re_column_1.PNG" width="800" height="200"><br /><br /><br />
+<img src="./image/re_column_1.PNG" width="800" height="200"><br /><br /><br />
 
 
 <h3>3. 실행 결과</h3>
 <br />1. N = 1 일 때<br />
-<img src="/uploads/cd419fc4d393028d98cc6e3a91c634a4/cmd_n_1.PNG" width="600" height="40">
-<img src="/uploads/f23590d24ea1aba12f13b6c9caa67f1b/result_n_1.PNG" width="200" height="120">
+<img src="./image/cmd_n_1.PNG" width="600" height="40">
+<img src="./image/result_n_1.PNG" width="200" height="120">
 <br />2. N = 2 일 때<br />
-<img src="/uploads/927735858a95e8ebc3d65e320ff5b672/cmd_n_2.png" width="600" height="40">
-<img src="/uploads/080deb8cdbe0e40849f3e82604a88366/result_n_2.png" width="200" height="120">
+<img src="./image/cmd_n_2.png" width="600" height="40">
+<img src="./image/result_n_2.png" width="200" height="120">
 <br />3. N = 3 일 때<br />
-<img src="/uploads/10e895e2a0eb558ca9e0bd6712c63bd9/cmd_n_3.PNG" width="600" height="40">
-<img src="/uploads/12ed359a00bff43b3d5b9b189e04233b/result_n_3.PNG" width="200" height="120">
+<img src="./image/cmd_n_3.PNG" width="600" height="40">
+<img src="./image/result_n_3.PNG" width="200" height="120">
 <br />4. N = 4 일 때<br />
-<img src="/uploads/119d0e4b3585264965517fea733e8e0d/cmd_n_4.PNG" width="600" height="40">
-<img src="/uploads/db9cfbdc807357415cf6e3940348f0c0/result_n_4.PNG" width="200" height="120">
+<img src="./image/cmd_n_4.PNG" width="600" height="40">
+<img src="./image/result_n_4.PNG" width="200" height="120">
 <br />5. N = 5 일 때<br />
-<img src="/uploads/f1b540f95246f4297d145de9e910f1b9/cmd_n_5.PNG" width="600" height="40">
-<img src="/uploads/48800d319d5b96b4295e5ddbc77547dc/result_n_5.PNG" width="200" height="120">
+<img src="./image/cmd_n_5.PNG" width="600" height="40">
+<img src="./image/result_n_5.PNG" width="200" height="120">
 <br />6. N = 6 일 때<br />
-<img src="/uploads/1e21f7cb0f9ad556f8564d82818f3f97/cmd_n_6.PNG" width="600" height="40">
-<img src="/uploads/b11ddb42f9ca3c282574931853a467ef/result_n_6.PNG" width="200" height="120">
+<img src="./image/cmd_n_6.PNG" width="600" height="40">
+<img src="./image/result_n_6.PNG" width="200" height="120">
 <br />7. N = 7 일 때<br />
-<img src="/uploads/98b3f01a70b8f3422191b224542839fb/cmd_n_7.PNG" width="600" height="40">
-<img src="/uploads/aa2c9da51e0cca81164d93fd2e5ace17/result_n_7.PNG" width="200" height="120">
+<img src="./image/cmd_n_7.PNG" width="600" height="40">
+<img src="./image/result_n_7.PNG" width="200" height="120">
 <br />8. N = 8 일 때<br />
-<img src="/uploads/50fdefd038c2e85f04267c4c6a08eac4/cmd_n_8.PNG" width="600" height="40">
-<img src="/uploads/85a084f7e2933bf8d8886c2feda3df72/result_n_8.PNG" width="200" height="120">
+<img src="./image/cmd_n_8.PNG" width="600" height="40">
+<img src="./image/result_n_8.PNG" width="200" height="120">
 <br />9. N = 9 일 때<br />
-<img src="/uploads/087103bde18b0b6b584e328a2002d70c/cmd_n_9.PNG" width="600" height="40">
-<img src="/uploads/69d0e838220e5dc6ae81af91367d297a/result_n_9.PNG" width="200" height="120">
+<img src="./image/cmd_n_9.PNG" width="600" height="40">
+<img src="./image/result_n_9.PNG" width="200" height="120">
 <br />10. N = 10 일 때<br />
-<img src="/uploads/220bd4302be503336482ac76f69b9561/cmd_n_10.PNG" width="600" height="40">
-<img src="/uploads/89a0e37e57bf8fafa5bf91b877de510d/result_n_10.PNG" width="200" height="120">
+<img src="./image/cmd_n_10.PNG" width="600" height="40">
+<img src="./image/result_n_10.PNG" width="200" height="120">
 <br />11. N = 11 일 때<br />
-<img src="/uploads/a34b3e79fc76984ce25baaa2e3b02de3/cmd_n_11.PNG" width="600" height="40">
-<img src="/uploads/8ab1cdf5f1473b4fc7ef4b944a7f8561/result_n_11.PNG" width="200" height="120"><br /><br /><br />
+<img src="./image/cmd_n_11.PNG" width="600" height="40">
+<img src="./image/result_n_11.PNG" width="200" height="120"><br /><br /><br />
 
 <h3> 4. 결과 분석</h3>
 1. 평균 Restart 횟수를 구하기 위하여 N = 4 ~ 10에 대하여 10번씩 수행한 결과는 아래와 같았다.<br />
-<img src="/uploads/78fd0c4862285677d1027818101c8275/table_average.PNG" width = "600" height = "500"><br /><br />
+<img src="./image/table_average.PNG" width = "600" height = "500"><br /><br />
 2. NXN 체스판에 대하여 각 column에 퀸을 하나씩 배치했을 때, 퀸의 배치의 경우의 수는 N<sup>N</sup> 에 해당한다.<br />
   따라서 문제의 해의 개수를 f(N) 이라 하면, 다음이 성립한다.
-<img src="/uploads/8af64db5664646a3d07c4ea694cec681/math_1.PNG" width="400" height="100"><br /><br />
+<img src="./image/math_1.PNG" width="400" height="100"><br /><br />
 이를 토대로 N = 4~10 일 때 해의 개수를 추정해 보면 다음과 같다.<br />
-<img src="/uploads/2bc33541eeff7a911b9a4df309d487ec/table_2.PNG" width="600" height="180">
+<img src="./image/table_2.PNG" width="600" height="180">
