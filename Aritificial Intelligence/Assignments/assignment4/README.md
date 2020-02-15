@@ -19,7 +19,7 @@ column = IntVector("column",N)
 ```
 
 ##### 2) formula: 도메인 및 제약사항은 다음의 formula를 사용하여 구현하였다.<br /><br />
-###### <span>&#10112;</span> 도메인 : 각 Symbol은 1~N 의 값을 가질 수 있다.<br />
+###### <span>&#10112;</span> 도메인 : 각 Symbol은 1~N 의 값을 가질 수 있다.
 <img src="./image/formula_domain.PNG" width="250" height="35">
 이는 다음과 같이 구현하였다.<br />
 ```
@@ -59,7 +59,7 @@ else:                                   # Solver 모델이 해 찾기에 실패�
 ```
 <br /><br />
 ### 3. 실험 결과
-실행화면(N=20일 때)
+실행화면(N=20일 때)<br />
 <img src="./image/opt20.PNG" width="600" height="200">
 
 <br /><span>&#8251;</span> nQueensNaive.py와의 비교<br />
