@@ -85,7 +85,6 @@ for i in range(N):
     for j in range(i):                  # 서로 다른 i, j
         s.add([And(column[i] - column[j] != i-j, column[i] - column[j] != j-i)])
 ```
-<br />
 ###### <span>&#10113;</span> N에 따른 성능 분석<br />
 nQueensNaive.py와 nQueensOpt.py를 12~20의 N에 대하여 소요 시간을 비교해보면 다음과 같았다.<br />
 <img src="./image/result_1.PNG" width="600" height="150">
