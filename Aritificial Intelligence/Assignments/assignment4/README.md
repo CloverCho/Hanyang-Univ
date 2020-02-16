@@ -19,8 +19,8 @@ column = IntVector("column",N)
 ```
 
 ##### 2) formula: 도메인 및 제약사항은 다음의 formula를 사용하여 구현하였다.<br />
-###### <span>&#10112;</span> 도메인 : 각 Symbol은 1~N 의 값을 가질 수 있다.
-<img src="./image/formula_domain.PNG" width="250" height="35">
+###### <span>&#10112;</span> 도메인 : 각 Symbol은 1~N 의 값을 가질 수 있다.<br />
+<img src="./image/formula_domain.PNG" width="250" height="35"><br />
 이는 다음과 같이 구현하였다.<br />
 ```
 domain = [And(column[i]>=1, column[i]<=N) for i in range(N)]
@@ -38,16 +38,16 @@ for i in range(N):
 ```
 <br />
 (ii) 대각선 방향으로 만나는 퀸이 존재하지 않는다.<br />
-<img src="./image/formula_const_dia.PNG" width="400" height="35">
+<img src="./image/formula_const_dia.PNG" width="400" height="35"><br />
 이는 다음과 같이 구현하였다.<br />
 ```
 for i in range(N):
     for j in range(i):                  # 서로 다른 i, j
         s.add([And(column[i] - column[j] != i-j, column[i] - column[j] != j-i)])
 ```
-<br />
+<br /><br />
 
-<span>&#8251;</span> 모델에 모든 조건을 추가하고 나면, 다음  코드를 활용하여 해를 출력하였다.<br />
+<span>&#8251;</span> 모델에 모든 조건을 추가하고 나면, 다음  코드를 활용하여 해를 출력하였다.
 ```
 if s.check() == sat:                    # Solver 모델이 해를 찾을 경우
     m = s.model()                       # 생성된 모델
