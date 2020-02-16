@@ -61,9 +61,40 @@ HONG SUK WOO
 **Problem 1. Fix the score above 10**
 
 In program, we use variables named &#39;Score-Player1&#39;, &#39;Score-Player2&#39; for each player&#39;s score. These variables are initially hexadecimal number. So, we have to convert these variables to decimal numbers. The Following is the code we used.
-
-| Score-Player1 EQU 35H ; The score of Player 1Score-Player2 EQU 36H ; The score of Player 2 IncreaseScore:        MOV A, Player-At-Bat        CJNE A, #1, IncPlayer2Score         ;check which player is playing IncPlayer1Score:        MOV A, Score-Player1        INC A                        ;increase player1&#39;s score by one        CALL MAKEDECIMAL        ;Call function which makes decimal number        MOV Score-Player1, A                JMP FinishScoreInc IncPlayer2Score:        MOV A, Score-Player2        INC A        CALL MAKEDECIMAL        MOV Score-Player2, A FinishScoreInc:        CALL IncScoreEvent        MOV A, #0        MOV Ball-Count, #0        MOV Strike-Count, #0        CALL DisplayScores         RET   MAKEDECIMAL:        MOV R1, A                        ;move player`s score to R1        ANL A, #00001111B                ;clear the upper 4 bits        CJNE A, #00001010B, MAKERET        ;if lower 4bits aren`t equal to 10, jump to MAKERET        MOV A,R1                        ;move R1 to A        ANL A, #11110000B                ;clear lower 4bits        ADD A, #00010000B                ;add 1 in second digit for LCD        RET MAKERET:        MOV A,R1                                RET  |
-| --- |
+```
+Score-Player1 EQU 35H ; The score of Player 1
+Score-Player2 EQU 36H ; The score of Player 2 
+  IncreaseScore:        
+     MOV A, Player-At-Bat        
+     CJNE A, #1, IncPlayer2Score         ;check which player is playing 
+  IncPlayer1Score:        MOV A, Score-Player1        
+     INC A                        ;increase player1's score by one        
+     CALL MAKEDECIMAL        ;Call function which makes decimal number        
+     MOV Score-Player1, A                
+     JMP FinishScoreInc 
+  IncPlayer2Score:        
+     MOV A, Score-Player2        
+     INC A        
+     CALL MAKEDECIMAL        
+     MOV Score-Player2, A FinishScoreInc:        
+     CALL IncScoreEvent        
+     MOV A, #0 
+     MOV Ball-Count, #0        
+     MOV Strike-Count, #0        
+     CALL DisplayScores         
+     RET   
+  MAKEDECIMAL:        
+     MOV R1, A                        ;move player`s score to R1        
+     ANL A, #00001111B                ;clear the upper 4 bits        
+     CJNE A, #00001010B, MAKERET      ;if lower 4bits aren`t equal to 10, jump to MAKERET        
+     MOV A,R1                        ;move R1 to A        
+     ANL A, #11110000B                ;clear lower 4bits        
+     ADD A, #00010000B                ;add 1 in second digit for LCD        
+     RET 
+  MAKERET:        
+     MOV A,R1                                
+     RET
+```
 
 In this code, we make MAKEDECIMAL function to make decimal number. In function, upper 4bits are equal to second digit number in decimal and lower 4bits are equal to first digit number in decimal.
 
