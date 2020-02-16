@@ -45,7 +45,7 @@ for i in range(N):
     for j in range(i):                  # 서로 다른 i, j
         s.add([And(column[i] - column[j] != i-j, column[i] - column[j] != j-i)])
 ```
-<br /><br />
+<br />
 
 <span>&#8251;</span> 모델에 모든 조건을 추가하고 나면, 다음  코드를 활용하여 해를 출력하였다.
 ```
