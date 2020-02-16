@@ -168,7 +168,8 @@ First we make database of our name in Hangul.
 
 As Following picture, we make &#39;조&#39;,&#39;윤&#39;,&#39;상&#39;,&#39; &#39;최&#39;,&#39;영&#39;,&#39;민&#39; by 0 and 1
 
-<img src = "./image/Name_Jo.PNG"  width="500" height="400">
+<img src = "./image/Name_Jo.png"  width="200" height="200"><img src = "./image/Name_Yun.png"  width="200" height="200"><img src = "./image/Name_Sang.png"  width="200" height="200"><br />
+<img src = "./image/Name_Choi.png"  width="200" height="200"><img src = "./image/Name_Yung.png"  width="200" height="200"><img src = "./image/Name_Min.png"  width="200" height="200">
 
 
 
@@ -411,7 +412,7 @@ TripleAction:
 
 Here is a picture showing the concept of a Triple
 
-## picture
+<img src = "./image/Triple.png"  width="600" height="200">
 
 **4) Algorithm for Homerun**
 
