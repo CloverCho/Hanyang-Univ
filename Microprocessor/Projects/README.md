@@ -168,8 +168,7 @@ First we make database of our name in Hangul.
 
 As Following picture, we make &#39;조&#39;,&#39;윤&#39;,&#39;상&#39;,&#39; &#39;최&#39;,&#39;영&#39;,&#39;민&#39; by 0 and 1
 
-
-## picture
+<img src = "./image/Name_Jo.PNG"  width="500" height="400">
 
 
 
