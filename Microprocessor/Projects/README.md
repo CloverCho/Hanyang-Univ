@@ -116,7 +116,8 @@ OccupyBase3:                                ;if base2 is occupied
 INCSCORE:        
       CALL IncreaseScore 
 COPYBASE:        
-      CALL CopyBasesToDotM                ;call function to display runner on Dot-Matrix        RET
+      CALL CopyBasesToDotM                ;call function to display runner on Dot-Matrix        
+      RET
 ```
 
 
